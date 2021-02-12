@@ -6,8 +6,8 @@
 .suggestion-single{
   width: 20%;
   padding: 10px;
+  cursor: pointer;
 }
-
-.suggestion-details-div {
-  margin-top: 40px;
+.suggestion-single:hover{
+  background-color: #E9EBEC;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Suggestion from "./Suggestion/Suggestion";
+import ShowDetails from "./Suggestion/ShowDetails";
 import AmazonIcon from "../../Icons/amazon.svg";
 import AndriodIcon from "../../Icons/andriod.svg";
 import FacebookIcon from "../../Icons/facebook.svg";
@@ -47,8 +48,8 @@ function Suggestions() {
   ]);
 
   const [details, setdetails] = useState({
-    icon: MacIcon,
-    title: "Mac",
+    icon: null,
+    title: null,
   });
 
   const sugesstionClickHandle = (index) => {
@@ -57,6 +58,10 @@ function Suggestions() {
     });
     setdetails(clickedSugesstion);
   };
+
+  if (details.icon != null && details.title != null) {
+    var showdetails = <ShowDetails icon={details.icon} title={details.title} />;
+  }
 
   return (
     <div>
@@ -71,10 +76,7 @@ function Suggestions() {
           />
         ))}
       </div>
-      <div className="suggestion-details-div">
-        {details.icon}
-        <p>{details.title}</p>
-      </div>
+      {showdetails}
     </div>
   );
 }
