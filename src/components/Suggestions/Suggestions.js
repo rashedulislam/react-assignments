@@ -46,13 +46,16 @@ function Suggestions() {
     },
   ]);
 
+  const [details, setdetails] = useState({
+    icon: MacIcon,
+    title: "Mac",
+  });
+
   const sugesstionClickHandle = (index) => {
-    const clickedSugesstion = suggestions.filter((item, i) => {
+    const clickedSugesstion = suggestions.find((item, i) => {
       return i == index;
     });
-    console.log(clickedSugesstion);
-    console.log(clickedSugesstion.icon);
-    console.log(clickedSugesstion.title);
+    setdetails(clickedSugesstion);
   };
 
   return (
@@ -69,8 +72,8 @@ function Suggestions() {
         ))}
       </div>
       <div className="suggestion-details-div">
-        {/* {item.icon}
-        <p>{item.title}</p> */}
+        {details.icon}
+        <p>{details.title}</p>
       </div>
     </div>
   );
