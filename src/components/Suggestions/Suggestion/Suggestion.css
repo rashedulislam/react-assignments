@@ -1,6 +1,9 @@
 .icon-image {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  background-color: #E9EBEC;
+  padding: 20px;
 }
 
 .suggestion-single{
@@ -9,5 +12,6 @@
   cursor: pointer;
 }
 .suggestion-single:hover{
-  background-color: #E9EBEC;
+  background-color: #4588aa;
+  border-radius: 10px;
 }
